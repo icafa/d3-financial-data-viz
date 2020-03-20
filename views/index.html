@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>D3 dashboard</title>
+        <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/uikit.min.css">
+
+		<script src="./assets/js/jquery-3.1.1.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+        <script src="./assets/js/jquery.csv.js"></script>
+        <script src="./assets/js/uikit.min.js"></script>
+
+	</head>
+	<body>
+        <div class="header">
+            <div class="logo-container">
+                <img src="./assets/images/logo.png">
+            </div>
+            <div class="title-container">
+                <div class="large-title">
+                    EME, EUROPE, JPAC, NA - RA Market
+                </div>
+                <div class="small-title">
+                    Sales in EU (MNF) - Sep 2018
+                </div>
+            </div>
+            <div class="toolbar">
+                <div class="toolbar-icon flashcard-table-switch">
+                    <img src="./assets/images/tableview-icon.png">
+                </div>
+                <div class="toolbar-icon">
+                    <img src="./assets/images/toolbar-icon2.png">
+                </div>
+                <div class="toolbar-icon">
+                    <img src="./assets/images/toolbar-icon3.png">
+                </div>
+                <div class="toolbar-icon">
+                    <img src="./assets/images/toolbar-icon4.png">
+                </div>
+                <div class="toolbar-icon">
+                    <img src="./assets/images/toolbar-icon5.png">
+                </div>
+                <div class="toolbar-icon">
+                    <img src="./assets/images/toolbar-icon6.png">
+                </div>
+            </div>
+        </div>
+        <div class="view-component">
+            <div class="board-container">
+                <div class="board-header">
+                    <div class="board-logo">
+                        <img src="./assets/images/market_view.png">
+                    </div>
+                    <div class="g-titlebody">
+                        <div class="g-title">
+                            <div class="board-col" id="lastMonthName">
+                                Sep 2018
+                            </div>
+                            <div class="board-col">
+                                Rolling Quarter
+                            </div>
+                            <div class="board-col">
+                                Moving Annual Total
+                            </div>
+                        </div>
+                        <div class="g-body">
+                            <div class="board-col" id="first-child">
+                                <div>EU (MNF) 
+                                    <span id="tablesort-arrow-icon" onclick="changeTableSort()">
+                                        <img src="./assets/images/svg-icons/drop-down-arrow.svg">
+                                    </span>
+                                </div>
+                                <div>MS</div>
+                                <div>MS vs. PY</div>
+                                <div>Gt vs. PY</div>
+                                <div>Gt vs. Mkt</div>
+                            </div>
+                            <div class="board-col">
+                                <div>EU (MNF)</div>
+                                <div>MS</div>
+                                <div>MS vs. PY</div>
+                                <div>Gt vs. PY</div>
+                                <div>Gt vs. Mkt</div>
+                            </div>
+                            <div class="board-col">
+                                <div>EU (MNF)</div>
+                                <div>MS</div>
+                                <div>MS vs. PY</div>
+                                <div>Gt vs. PY</div>
+                                <div>Gt vs. Mkt</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="board-body">
+
+                </div>
+                <div class="board-footer">
+                    <span id="currentpage-desc">Page 1/1</span>
+                    <img src="./assets/images/svg-icons/left-arrow.svg"
+                        onclick="moveToPrevPage()">
+                    <img src="./assets/images/svg-icons/right-arrow.svg"
+                        onclick="moveToNextPage()">
+                </div>
+            </div>
+            <div class="flashcard-container">
+                <div class="flashcard-title">
+                </div>
+                <div id="flashcard-body">
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-tabs">
+                    <div class="tab" tab-name="sales"><div style="top: 50%;">Sales</div></div>
+                    <div class="tab" tab-name="launch"><div style="top: 50%;">Launch</div></div>
+                    <div class="tab" tab-name="internal-sales"><div style="top: 70%;">Internal&nbsp;sales</div></div>
+                </div>
+                <div id="chart-body">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="filter-component">
+            <div class="filter-tabs">
+                <div class="tab" onclick="setActiveTab('country')">Country</div>
+                <div class="tab" onclick="setActiveTab('market')">Market</div>
+                <div class="tab active" onclick="setActiveTab('product')">Product</div>
+                <div class="tab" onclick="setActiveTab('metrics')">Metrics</div>
+            </div>
+            <div class="automatic-update-label">(Automatic Update)</div>
+            <div class="filter-body uk-accordion" data-uk-accordion="multiple: true">
+                <div class="filter-group">
+                    <div class="group-name">
+                        Corporation Group 1
+                    </div>
+                    <div class="items-container">
+                        <div class="item">UCB</div>
+                        <div class="item">ASTELLAS</div>
+                        <div class="item">BAYER</div>
+                        <div class="item">JANSSEN</div>
+                        <div class="item">MERCK KGAA</div>
+                        <div class="item">SUN PHARMA</div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="group-name">
+                        Product Group 3
+                    </div>
+                    <div class="items-container">
+                        <div class="item">ABATACEPT</div>
+                        <div class="item">ADALIMUMAB</div>
+                        <div class="item">ANAKINRA</div>
+                        <div class="item">BARICITINIB</div>
+                        <div class="item">CERTOLIZU...</div>
+                        <div class="item">ETANERCEPT</div>
+                        <div class="item">ABATACEPT</div>
+                        <div class="item">ADALIMUMAB</div>
+                        <div class="item">ANAKINRA</div>
+                        <div class="item">BARICITINIB</div>
+                        <div class="item">CERTOLIZU...</div>
+                        <div class="item">ETANERCEPT</div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="group-name">
+                        Product Group 2
+                    </div>
+                    <div class="items-container">
+                        <div class="item">ABATACEPT</div>
+                        <div class="item">ADALIMUMAB</div>
+                        <div class="item">ANAKINRA</div>
+                        <div class="item">BARICITINIB</div>
+                        <div class="item">CERTOLIZU...</div>
+                        <div class="item">ETANERCEPT</div>
+                        <div class="item">ABATACEPT</div>
+                        <div class="item">ADALIMUMAB</div>
+                        <div class="item">ANAKINRA</div>
+                        <div class="item">BARICITINIB</div>
+                        <div class="item">CERTOLIZU...</div>
+                        <div class="item">ETANERCEPT</div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="group-name">
+                        Product Group 1
+                    </div>
+                    <div class="items-container">
+                        <div class="item">ABATACEPT</div>
+                        <div class="item">ADALIMUMAB</div>
+                        <div class="item">ANAKINRA</div>
+                        <div class="item">BARICITINIB</div>
+                        <div class="item">CERTOLIZU...</div>
+                        <div class="item">ETANERCEPT</div>
+                        <div class="item">ABATACEPT</div>
+                        <div class="item">ADALIMUMAB</div>
+                        <div class="item">ANAKINRA</div>
+                        <div class="item">BARICITINIB</div>
+                        <div class="item">CERTOLIZU...</div>
+                        <div class="item">ETANERCEPT</div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="group-name">
+                        PI Status
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="countrymarket-container">
+                <div class="footer-element country-category">
+                    <div class="f-icon">
+                        <img src="./assets/images/footer-icon1.png">
+                    </div>
+                    <div class="f-text">
+                    </div>
+                </div>
+                <div class="footer-element market-category">
+                    <div class="f-icon">
+                        <img src="./assets/images/footer-icon2.png">
+                    </div>
+                    <div class="f-text">
+                    </div>
+                </div>
+            </div>
+
+<!--             <div class="footer-version"></div>
+            <div class="footer-right-icon">
+                <img src="./assets/images/footer-icon3.png">
+            </div> -->
+        </div>
+        <script src="./vendor/javascripts/d3.v5.min.js"></script>
+        <script src="./assets/js/common.js"></script>
+        <script src="./assets/js/default-params.js"></script>
+
+        <script src="./assets/js/analysis/generic-analysis.js"></script>
+        <script src="./assets/js/analysis/mainboard.js"></script>
+        <script src="./assets/js/analysis/abs-sales.js"></script>
+        <script src="./assets/js/analysis/delta-marketshare.js"></script>
+        <script src="./assets/js/analysis/evol-index.js"></script>
+        <script src="./assets/js/analysis/evol-index-launch.js"></script>
+        <script src="./assets/js/analysis/growth-vs-market.js"></script>
+        <script src="./assets/js/analysis/growth.js"></script>
+        <script src="./assets/js/analysis/marketsale.js"></script>
+        <script src="./assets/js/analysis/marketsale-launch.js"></script>
+
+        <script src="./assets/js/html_components/board.js"></script>
+        <script src="./assets/js/html_components/filter-tabs.js"></script>
+
+        <script src="./assets/js/visual_components/generic-drawing.js"></script>
+        <script src="./assets/js/visual_components/compA.js"></script>
+        <script src="./assets/js/visual_components/compB.js"></script>
+        <script src="./assets/js/visual_components/compC.js"></script>
+        <script src="./assets/js/visual_components/compD.js"></script>
+        <script src="./assets/js/visual_components/compE.js"></script>
+        <script src="./assets/js/visual_components/compF.js"></script>
+        <script src="./assets/js/visual_components/launchCompA.js"></script>
+        <script src="./assets/js/visual_components/launchCompB.js"></script>
+        <script src="./assets/js/visual_components/index.js"></script>
+        <script src="./assets/js/script.js"></script>
+	</body>
+</html>

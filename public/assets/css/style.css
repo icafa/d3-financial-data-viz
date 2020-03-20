@@ -1,0 +1,417 @@
+body {
+	width: 1450px;
+}
+.header {
+	border-bottom: solid rgb(242, 242, 242) 2px;
+	display: inline-block;
+	width: 100%;
+}
+.header .logo-container {
+	width: 180px;
+	float: left;
+}
+.header .logo-container img{
+	margin-left: 11px;
+	margin-top: 4px;
+	width: 178px;
+	float: left;
+}
+.header .title-container {
+	margin-left: 22px;
+	margin-top: 13px;
+	color: rgb(108, 129, 174);
+	float: left;
+}
+.header .title-container .large-title {
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 19px;
+}
+.header .title-container .small-title {
+	font-weight: thin;
+	font-size: 16px;
+}
+.header .toolbar {
+	float: right;
+	display: inline-block;
+}
+.header .toolbar .toolbar-icon {
+	display: inline-block;
+	float: left;
+}
+.view-component {
+	margin-top: -4px;
+	margin-left: 10px;
+	width: 1230px;
+	float: left;
+    position: relative;
+}
+.board-container {
+    width: 1200px;
+    overflow-x: hidden;
+}
+.board-header {
+	position: relative;
+	height: 40px;
+}
+.board-header .board-logo {
+	width: 180px;
+	float: left;
+	margin-right: -2px;
+	margin-top: -2px;
+	border-bottom: solid rgb(242, 242, 242) 2px;
+}
+.board-header .board-logo .logo-img{
+	width: 179px;
+}
+.g-titlebody {
+	position: absolute;
+	left: 180px;
+    height: 34px;
+	width: 10000px;
+}
+.board-header .g-title {
+	margin-top: -1px;
+	margin-left: 2px;
+	background-image: linear-gradient(to right, rgb(199, 204, 229), rgb(199, 204, 229) 70% , rgb(242, 242, 242));
+	display: inline-block;
+    width: 100%;
+}
+.board-header .board-col {
+	width: 340px;
+	border-bottom: solid rgb(242, 242, 242) 2px;
+	float: left;
+}
+.board-header .g-title .board-col {
+	text-align: center;
+	font-weight: bold;
+	font-size: 11px;
+	width: 340px;
+	border-right: solid rgb(232, 233, 239) 1px;
+}
+.board-header .g-body {
+    margin-top: -2px;
+    width: 100%;
+    display: inline-block;
+}
+.board-header .g-body .board-col div{
+	text-align: center;
+	font-size: 11px;
+	width: 20%;
+	border-right: solid rgb(232, 233, 239) 1px;
+	float: left;
+}
+#tablesort-arrow-icon img {
+	width: 10px;
+}
+.board-footer {
+	text-align: center;
+}
+.board-footer img{
+	width: 10px;
+}
+.board-body {
+	display: inline-block;
+	font-size: 11px;
+	margin-top: -4px;
+    height: 255px;
+	background: rgb(242, 242, 242);
+    overflow-y: scroll;
+
+}
+.board-body .board-item {
+	height: 16px;
+	margin: 1px 0;
+    background: white;
+}
+.board-body .board-item:hover {
+	background-color: rgb(233, 240, 255);
+}
+.board-body .board-item.selected {
+	background-color: rgb(197, 204, 228);
+}
+
+.board-body .board-item .board-name {
+	width: 180px;
+	float: left;
+	border-bottom: solid rgb(242, 242, 242) 2px;
+	border-right: solid rgb(242, 242, 242) 2px;
+	padding-left: 2px;
+	cursor: pointer;
+}
+.board-body .board-item[metric-level="0"] .board-name {
+	font-weight: bold;
+}
+.board-body .board-item .board-col {
+	width: 340px;
+	float: left;
+	border-bottom: solid rgb(242, 242, 242) 2px;
+
+}
+.board-body .board-item .board-col div{
+	text-align: center;
+	width: 20%;
+	border-right: solid rgb(232, 233, 239) 1px;
+	float: left;
+}
+.board-body .board-item .board-col .minus-value{
+	color: rgb(255, 47, 47);
+}
+
+.flashcard-container {
+    border: solid rgb(239, 239, 239) 2px;
+    background: white;
+    width: calc(100% - 180px);
+    height: 292px;
+    position: absolute;
+    left: 178px;
+    top: 0;
+}
+
+.flashcard-title {
+    line-height: 22px;
+    margin: 0 8px;
+    font-weight: bold;
+}
+
+#flashcard-body {
+    height: 270px;
+}
+
+.flashcard {
+	float: left;
+	width: 24%;
+	border: solid rgb(248, 248, 248) 2px;
+	border-left: none;
+}
+.flashcard:last-child {
+	border-right: none;
+}
+
+.flashcard img{
+	width: 100%;
+}
+
+.chart-container {
+    display: inline-block;
+    user-select: none;
+}
+.chart-container .chart-tabs {
+	margin-top: 40px;
+    height: 270px;
+    width: 20px;
+	display: inline-block;
+	float: left;
+}
+.chart-container .chart-tabs .tab{
+    margin-top: 3px;
+	height: 80px;
+    width: 100%;
+    background-color: rgb(217, 217, 217);
+}
+.chart-container .chart-tabs .tab.active{
+    background-color: rgb(180, 236, 118);
+}
+.chart-container .chart-tabs .tab div{
+	text-align: center;
+    margin: 0;
+    vertical-align: middle;
+    height: 1.5rem;
+    transform: rotate(270deg);
+    max-width: 1.5rem;
+    display: block;
+    transform-origin: 50% 50%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 0px;
+    position: relative;
+}
+.chart-container #chart-body {
+	width: 1206px;
+	height: 310px;
+	border: solid 3px rgb(242, 242, 242);
+	float: left;
+}
+
+.chart-container #chart-body svg:first-child {
+	border-right: solid 3px rgb(248, 248, 248);
+}
+.addVisualProductCount {
+	cursor: pointer;
+}
+
+.filter-component {
+	width: 210px;
+	padding: 5px;
+	float: left;
+	user-select: none;
+}
+.filter-component .filter-tabs {
+	width: 100%;
+}
+.filter-component .filter-tabs .tab{
+	width: 23%;
+	float: left;
+	margin-right: 2%;
+	background-color: rgb(217, 217, 217);
+	border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+.filter-component .filter-tabs .tab.active {
+	background-color: rgb(179, 237, 109);
+}
+.filter-component .automatic-update-label {
+	font-style: italic;
+	text-align: center;
+	font-size: 12px;
+}
+.filter-component .filter-body {
+	display: inline-block;
+}
+.filter-component .filter-body .filter-group {
+	margin-top: 5px;
+}
+.filter-component .filter-body .filter-group .group-name {
+	font-weight: bold;
+}
+.filter-component .filter-body .filter-group .group-name.active {
+	background-image: linear-gradient(rgb(184, 207, 229), rgb(255, 255, 255));
+}
+.filter-component .filter-body .filter-group .group-name .group-text {
+    width: 160px;
+	display: inline-block;
+}
+.filter-component .filter-body .filter-group .deselectall {
+	background-image: url(/assets/images/disabled-deselectall.png);
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+.filter-component .filter-body .filter-group .group-name.active .deselectall {
+	background-image: url(/assets/images/deselectall.png);
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+.filter-component .filter-body .filter-group .selectall {
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+.filter-component .filter-body .filter-group .selectall img {
+	margin: 25%;
+	width: 50%;
+	height: 50%;
+}
+
+.filter-component .filter-body .filter-group:first-child .items-container { 
+	max-height: 60px;
+}
+.filter-component .filter-body .filter-group .items-container { 
+	margin-top: 5px;
+	max-height: 120px;
+	overflow-y: scroll;
+}
+.filter-component .filter-body .filter-group .items-container .item {
+	background-color: rgb(220, 230, 240);
+	width: 45%;
+	margin: 2px;
+	font-size: 10px;
+	float: left;
+	text-align: center;
+	border-radius: 2px;
+    height: 13.3px;
+    overflow: hidden;
+}
+.filter-component .filter-body .filter-group .items-container .item.size1 {
+	width: 90%;
+}
+.filter-component .filter-body .filter-group .items-container .item.size3 {
+	width: 29%;
+}
+.filter-component .filter-body .filter-group .items-container .item.size4 {
+	width: 22%;
+}
+.filter-component .filter-body .filter-group .items-container .item.disabled {
+	background-color: transparent;
+	color: rgb(144, 144, 144);
+}
+.filter-component .filter-body .filter-group .items-container .item.active {
+	background-color: rgb(67, 130, 187);
+	color: #FFF;
+}
+.footer {
+	display: inline-block;
+}
+.footer .countrymarket-container {
+	display: inline-block;
+	float: left;
+}
+.footer .footer-element {
+    margin: 3px 0;
+    display: inline-block;
+}
+.footer .f-icon {
+	float: left;
+	display: inline-block;
+}
+.footer .f-text {
+	float: left;
+	font-size: 10px;
+	width: 1100px;
+	margin-left: 15px;
+}
+.footer .footer-version {
+	font-size: 15px;
+	margin: 10px 30px;
+	float: left;
+}
+.footer .footer-right-icon {
+	float: right;
+}
+.chart-tooltip {
+	background: white;
+	display: inline-block;
+}
+.chart-tooltip .tooltip-title {
+	background: brown;
+	color: white;
+	text-align: center;
+}
+.chart-tooltip .tooltip-desc {
+	background: white;
+}
+.chart-tooltip .tooltip-desc .descitem{
+	position: relative;
+	width: 200px;
+	height: 30px;
+}
+.chart-tooltip .tooltip-desc .descitem div:nth-child(1){
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	padding-left: 10px;
+	border: solid grey 1px;
+}
+.chart-tooltip .tooltip-desc .descitem div:nth-child(2){
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	padding-left: 10px;
+	border: solid grey 1px;
+}
+.expand-icon {
+	padding: 0 2px;
+	margin: 2px;
+	cursor: zoom-in;
+}
+.unexpand-icon {
+	margin: 2px;
+	cursor: zoom-out;
+}
